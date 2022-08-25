@@ -1,4 +1,4 @@
-package com.srk.servlet;
+package com.rnstech.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.srk.dao.StudentDAO;
+import com.rnstech.dao.StudentDAO;
 
-import vo.Student;
+import com.rnstech.vo.Student;
 
 @WebServlet("/editStudent")
 public class EditStudent extends HttpServlet{

@@ -1,4 +1,4 @@
-package com.srk.dao;
+package com.rnstech.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import vo.Student;
+import com.rnstech.vo.Student;
 public class StudentDAO {
 	/*public static Connection getConnection(){  
         Connection con=null;  

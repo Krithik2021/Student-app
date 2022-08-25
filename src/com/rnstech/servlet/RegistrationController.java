@@ -1,4 +1,4 @@
-package com.srk.servlet;
+package com.rnstech.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.srk.dao.StudentDAO;
+import com.rnstech.dao.StudentDAO;
 
-import vo.Student;
-@WebServlet("/registrationController")
+import com.rnstech.vo.Student;
+@WebServlet("registrationController")
 public class RegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

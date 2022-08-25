@@ -1,4 +1,4 @@
-package vo;
+package com.rnstech.vo;
 
 public class Student {
 	private int studentId;
