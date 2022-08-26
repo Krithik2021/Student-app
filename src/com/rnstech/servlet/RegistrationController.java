@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.rnstech.dao.StudentDAO;
 
 import com.rnstech.vo.Student;
-@WebServlet("registrationController")
+@WebServlet("/registrationController/*")
 public class RegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
