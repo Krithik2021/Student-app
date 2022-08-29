@@ -58,13 +58,13 @@ WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 ### ```$ sudo systemctl enable tomcat```
 
 # Web Server Installation
-### ```$ echo \"WEB SERVER SETUP\"```
+### ```$ echo "WEB SERVER SETUP"```
 
 ### ```$ sudo amazon-linux-extras install nginx1 -y```
 
 ### ```$ sudo rm -rf  /usr/share/nginx/html/*```
 
-### ```$ echo \\"Remove old Web Content\t\t\"```
+### ```$ echo \"Remove old Web Content\t\t\"```
 
 ### ```$ cd /tmp/```
 
@@ -72,9 +72,9 @@ WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 
 ### ```$ cp -R static-project/iPortfolio/* /usr/share/nginx/html/```
 
-### ```$ sed -i -e '/location \\/student/,+3 d' -e '/^        error_page 404/ i \\t location /student { \\n\\t\\tproxy_pass http://localhost:8080/student;\\n\\t}\\n' /etc/nginx/nginx.conf```
+### ```$ sed -i -e '/location \/student/,+3 d' -e '/^        error_page 404/ i \t location /student { \n\t\tproxy_pass http://localhost:8080/student;\n\t}\n' /etc/nginx/nginx.conf```
 
-### echo "Update Configuration File\t"
+### ```$ echo "Update Configuration File\t"```
 
 ### ```$ sudo systemctl enable nginx```
 
