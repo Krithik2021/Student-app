@@ -32,7 +32,7 @@
 
 # Register Tomcat as a Service
 
-### ```$ echo '# Systemd unit file for tomcat
+### $ echo '# Systemd unit file for tomcat
 [Unit]
 Description=Apache Tomcat Web Application Container
 After=syslog.target network.target
@@ -46,12 +46,13 @@ Environment="CATALINA_OPTS=-Xms512M -Xmx512M -server -XX:+UseParallelGC"
 Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
-# ExecStop=/bin/kill -15 $MAINPID
 User=ec2-user
 Group=ec2-user
 [Install]
-WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service```
+WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 
 ### ```$ systemctl daemon-reload```
+
 ### ```$ systemctl start tomcat```
+
 ### ```$ systemctl enable tomcat```
