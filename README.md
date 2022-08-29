@@ -1,7 +1,7 @@
 # student-app
 
 # Set Hostname Build Server
-`hostnamectl set-hostname build-server`
+```hostnamectl set-hostname build-server```
 
 # Install Java
 `amazon-linux-extras install java-openjdk11 -y`
