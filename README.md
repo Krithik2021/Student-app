@@ -30,9 +30,9 @@
 
 ### ```$ chown -R ec2-user:ec2-user /opt/tomcat/```
 
-# Register Tomcat as a Service
+## Register Tomcat as a Service
 
-### $ echo '# Systemd unit file for tomcat
+$ echo '# Systemd unit file for tomcat
 [Unit]
 Description=Apache Tomcat Web Application Container
 After=syslog.target network.target
@@ -51,8 +51,8 @@ Group=ec2-user
 [Install]
 WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 
-### ```$ systemctl daemon-reload```
+### ```$ sudo systemctl daemon-reload```
 
-### ```$ systemctl start tomcat```
+### ```$ sudo systemctl start tomcat```
 
-### ```$ systemctl enable tomcat```
+### ```$ sudo systemctl enable tomcat```
