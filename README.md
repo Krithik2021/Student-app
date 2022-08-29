@@ -1,10 +1,10 @@
 # student-app
 
 # Set Hostname Build Server
-## ``` $ sudo hostnamectl set-hostname build-server```
+### ``` $ sudo hostnamectl set-hostname build-server```
 
 # Install Java
-## ```$ sudo amazon-linux-extras install java-openjdk11 -y```
+### ```$ sudo amazon-linux-extras install java-openjdk11 -y```
 
 # Install Git SCM and mysql client
 ## ```$ sudo yum install git mysql -y```
