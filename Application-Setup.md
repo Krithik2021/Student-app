@@ -34,7 +34,7 @@
 
 Also we need to specify the details of DB in tomcat config and application will try to consume it. Add the following lines in $TOMCAT_HOME/conf/context.xml. Add these lines just before the last line.
 
-<Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="student" password="student1" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://{DBSERVER-IPADDRESS}:3306/studentapp"/>
+`<Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="student" password="student1" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://{DBSERVER-IPADDRESS}:3306/studentapp"/>`
 
 ## Package the Application using Maven 
 
