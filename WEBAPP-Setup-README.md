@@ -1,4 +1,4 @@
-# student-app
+# Tomcat and Nginx Setup
 
 # Set Hostname Build Server
 ### ``` $ sudo hostnamectl set-hostname build-server```
@@ -56,3 +56,26 @@ WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 ### ```$ sudo systemctl start tomcat```
 
 ### ```$ sudo systemctl enable tomcat```
+
+# Web Server Installation
+### ```$ echo \"WEB SERVER SETUP\"```
+
+### ```$ sudo amazon-linux-extras install nginx1 -y```
+
+### ```$ sudo rm -rf  /usr/share/nginx/html/*```
+
+### ```$ echo \\"Remove old Web Content\t\t\"```
+
+### ```$ cd /tmp/```
+
+### ```$ git clone https://gitlab.com/rns-app/static-project.git```
+
+### ```$ cp -R static-project/iPortfolio/* /usr/share/nginx/html/```
+
+### ```$ sed -i -e '/location \\/student/,+3 d' -e '/^        error_page 404/ i \\t location /student { \\n\\t\\tproxy_pass http://localhost:8080/student;\\n\\t}\\n' /etc/nginx/nginx.conf```
+
+### echo "Update Configuration File\t"
+
+### ```$ sudo systemctl enable nginx```
+
+### ```$ sudo systemctl start nginx```
