@@ -1,4 +1,4 @@
-package com.example.javamavenjunithelloworld;
+package com.rnstech.javamavenjunithelloworld;
 
 import org.junit.Rule;
 import org.junit.Test;
