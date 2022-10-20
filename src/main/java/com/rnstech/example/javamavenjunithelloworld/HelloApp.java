@@ -1,4 +1,4 @@
-package com.example.javamavenjunithelloworld;
+package com.rnstech.example.javamavenjunithelloworld;
 
 /**
  * A very basic program that demonstrates the use of JUnit tests. The tests
