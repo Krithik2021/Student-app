@@ -1,4 +1,4 @@
-package com.rnstech.javamavenjunithelloworld;
+package com.rnstech.example;
 
 import org.junit.Test;
 

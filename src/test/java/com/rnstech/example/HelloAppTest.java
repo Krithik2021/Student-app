@@ -1,4 +1,4 @@
-package com.example.rnstech;
+package com.rnstech.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
