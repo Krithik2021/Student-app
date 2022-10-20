@@ -1,5 +1,6 @@
 package com.rnstech.example;
 
+import com.rnstech.example.HelloApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;

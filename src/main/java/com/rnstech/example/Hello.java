@@ -1,4 +1,4 @@
-package com.rnstech.example.javamavenjunithelloworld;
+package com.rnstech.example;
 
 import java.io.PrintStream;
 
