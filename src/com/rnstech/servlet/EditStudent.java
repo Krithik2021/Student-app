@@ -18,7 +18,7 @@ public class EditStudent extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	           throws ServletException, IOException {
 	        response.setContentType("text/html");
-	        PrintWriter out=response.getWriter() 
+	        PrintWriter out=response.getWriter();
 	        out.println("<h1>Update Student</h1>");
 	        String sid=request.getParameter("stdId");
 	        int stdId=Integer.parseInt(sid);
