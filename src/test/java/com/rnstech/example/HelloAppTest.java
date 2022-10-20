@@ -22,7 +22,7 @@ import static org.powermock.api.mockito.PowerMockito.whenNew;
  * <p/>
  * This test uses PowerMock and Mockito to mock objects.
  */
-@PowerMockIgnore("jdk.internal.reflect.*")
+//@PowerMockIgnore("jdk.internal.reflect.*")
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({System.class, HelloApp.class})
 public class HelloAppTest {
