@@ -1,8 +1,10 @@
 - name: Deploy the latest war file to apache tomcat
   hosts: deploy
   become: true
-  vars_files:
-   - ansible/variables.yml
+  vars:
+    - destination_location: "/opt/tomcat/webapps/"
+    - buildartifact_location: "target/*.war"
+    - changedir_location: "/home/devops"
 
   tasks:
       - copy:
