@@ -7,16 +7,6 @@
     - current_working_directory: ""
 
   tasks:
-    - name: Present Working Dir
-      shell:
-         "pwd"
-      args:
-        chdir: "{{ lookup('env','WORKSPACE') }}" 
-      register: fileout
-      tags: fileout
-
-    - debug: msg="{{ fileout.stdout-lines }}"
-
     - copy:
         src: "{{ item }}"
         dest: "{{ destination_location }}"
