@@ -8,7 +8,7 @@
     #- debug: var={{ buildartifact_location }}
     - name: Copy file with owner and permissions
       copy:
-        src: "/home/devops/jenkins/workspace/test/targets/*.war"
+        src: "/home/devops/jenkins/workspace/test/target/*.war"
         dest: "{{ destination_location }}"
         owner: devops
         group: devops
