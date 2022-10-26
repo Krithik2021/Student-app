@@ -12,3 +12,11 @@
         mode: 0744
       tags:
         - shell_script_copy
+    - name: Execute Shell SCript
+      shell:
+         "./create_schema.sh"
+      args:
+        chdir: "/home/devops" 
+      register: schema_status
+      tags: schema
+    - debug: msg="{{ schema_status }}"
