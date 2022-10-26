@@ -3,7 +3,7 @@
   become: true
   vars:
     - destination_location: "/opt/tomcat/webapps/"
-    - buildartifact_location: "{{ lookup('env',WORKSPACE) }}"
+    - buildartifact_location: "{{ lookup('env','WORKSPACE') }}"
   tasks:
     - debug: var={{ buildartifact_location }}
     - name: Copy file with owner and permissions
@@ -15,3 +15,4 @@
         mode: u+rwx,g+rwx,o-rwx
         with_fileglob:
           - "{{ buildartifact_location }}/targets/*.war"
+
