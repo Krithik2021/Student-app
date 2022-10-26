@@ -3,10 +3,10 @@
   hosts: deploy
   connection: ssh
   tasks:
-    - name: copy schema.sh file deployment Server 
+    - name: copy schema file deployment Server 
       copy:
-        src: files/create_schema.sh
-        dest: /home/devops/create_schema.sh
+        src: files/configure_db_schema_nginx_app.sh
+        dest: /home/devops/configure_db_schema_nginx_app.sh
         owner: devops
         group: devops
         mode: 0744
@@ -14,7 +14,7 @@
         - shell_script_copy
     - name: Execute Shell SCript
       shell:
-         "./create_schema.sh"
+         "./configure_db_schema_nginx_app.sh"
       args:
         chdir: "/home/devops" 
       register: schema_status
