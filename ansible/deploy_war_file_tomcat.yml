@@ -4,7 +4,6 @@
   vars:
     - destination_location: "/opt/tomcat/webapps/"
     - buildartifact_location: "{{ lookup('env','WORKSPACE') }}"
-    - current_working_directory: ""
 
   tasks:
     - copy:
