@@ -3,14 +3,25 @@
   become: true
   vars:
     - destination_location: "/opt/tomcat/webapps/"
-    - buildartifact_location: "targets/*.war"
+    - buildartifact_location: "{{ lookup('env','WORKSPACE') }}/targets/*.war"
+    - current_working_directory: ""
 
   tasks:
-      - copy:
-          src: "{{ item }}"
-          dest: "{{ destination_location }}"
-          owner: devops
-          group: devops
-          mode: u+rwx,g+rwx,o-rwx
+    - name: Present Working Dir
+      shell:
+         "pwd"
+      args:
+        chdir: "{{ lookup('env','WORKSPACE') }}" 
+      register: fileout
+      tags: fileout
+
+    - debug: msg="{{ fileout.stdout-lines }}"
+
+    - copy:
+        src: "{{ item }}"
+        dest: "{{ destination_location }}"
+        owner: devops
+        group: devops
+        mode: u+rwx,g+rwx,o-rwx
         with_fileglob:
            - "{{ buildartifact_location }}"
