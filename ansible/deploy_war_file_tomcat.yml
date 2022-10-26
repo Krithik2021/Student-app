@@ -15,4 +15,3 @@
         remote_src: no
         with_fileglob:
           - "{{ buildartifact_location }}"
-
