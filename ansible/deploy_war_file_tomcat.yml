@@ -1,0 +1,15 @@
+- name: Deploy the latest war file to apache tomcat
+  hosts: deploy
+  become: true
+  vars_files:
+   - ansible/variables.yaml
+
+  tasks:
+      - copy:
+          src: "{{ item }}"
+          dest: "{{ destination_location }}"
+          owner: devops
+          group: devops
+          mode: u+rwx,g+rwx,o-rwx
+        with_fileglob:
+           - "{{ buildartifact_location }}"
