@@ -2,7 +2,7 @@
   hosts: deploy
   become: true
   vars_files:
-   - ansible/variables.yaml
+   - ansible/variables.yml
 
   tasks:
       - copy:
