@@ -5,11 +5,13 @@
     - destination_location: "/opt/tomcat/webapps/"
     - buildartifact_location: "{{ lookup('env','WORKSPACE') }}"
   tasks:
-    - copy:
-      src: "{{ item }}"
-      dest: "{{ destination_location }}"
-      owner: devops
-      group: devops
-      mode: u+rwx,g+rwx,o-rwx
-      with_fileglob:
-        - "{{ buildartifact_location }}/targets/*.war"
+    - debug: var={{ buildartifact_location }}
+    - name: Copy file with owner and permissions
+      copy:
+        src: "{{ item }}"
+        dest: "{{ destination_location }}"
+        owner: devops
+        group: devops
+        mode: u+rwx,g+rwx,o-rwx
+        with_fileglob:
+          - "{{ buildartifact_location }}/targets/*.war"
