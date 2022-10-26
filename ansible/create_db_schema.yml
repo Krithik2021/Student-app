@@ -1,0 +1,14 @@
+# copy_file.yml
+- name: copy files to destination
+  hosts: deploy
+  connection: ssh
+  tasks:
+    - name: copy schema.sh file deployment Server 
+      copy:
+        src: files/create_schema.sh
+        dest: /home/devops/create_schema.sh
+        owner: devops
+        group: devops
+        mode: 0744
+      tags:
+        - shell_script_copy
