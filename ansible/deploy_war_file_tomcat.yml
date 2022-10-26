@@ -3,12 +3,11 @@
   become: true
   vars:
     - destination_location: "/opt/tomcat/webapps/"
-    - buildartifact_location: "ansible/files/student.war"
+    - buildartifact_location: "files/student.war"
   tasks:
-    - debug: var={{ buildartifact_location }}
     - name: Copy file with owner and permissions
       copy:
-        src: "ansible/files/student.war"
+        src: "{{ item }}"
         dest: "{{ destination_location }}"
         owner: devops
         group: devops
@@ -16,3 +15,4 @@
         remote_src: no
         with_fileglob:
           - "{{ buildartifact_location }}"
+
