@@ -1,4 +1,3 @@
-#rkalluru/d43-ftomcat:TAG
 FROM    tomcat:8.5
 ADD     student.war webapps/student.war 
 COPY     mysql-connector.jar lib/mysql-connector.jar 
