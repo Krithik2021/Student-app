@@ -122,12 +122,15 @@ Nothing
       <username>repouser</username>
       <password>repopwd</password>
     </server>
+
+    <username>${NEXUS_USR}</username>
+      <password>${NEXUS_PSW}</password>
     -->
 
     <server>
       <id>deployment</id>
-      <username>${NEXUS_USR}</username>
-      <password>${NEXUS_PSW}</password>
+      <username>admin</username>
+      <password>welcome</password>
     </server>
 
     <!-- Another sample, using keys to authenticate.
