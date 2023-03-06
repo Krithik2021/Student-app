@@ -79,18 +79,18 @@
 
     </plugins>
   </build>
-   <!-- <distributionManagement>
+   <distributionManagement>
         <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
-            <url>http://IP:8081/repository/studentapp-releases/</url>
+            <url>http://34.250.57.42:8081/repository/rns-release/</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
             <name>Internal Snapshot Releases</name>
-            <url>http://IP:8081/repository/studentapp-snapshots/</url>
+            <url>http://34.250.57.42:8081/repository/rns-snapshot/</url>
         </snapshotRepository>
-    </distributionManagement> -->
+    </distributionManagement> 
   <dependencies>
   	<dependency>
   		<groupId>javax.servlet</groupId>
