@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                echo 'Compile Stage...'
+                echo 'Cloning Repository...'
+                git branch: 'main', credentialsId: 'gitlab', url: 'https://gitlab.com/rns-app/student-app.git'
             }
         }
         stage('Unit-Testing') {
