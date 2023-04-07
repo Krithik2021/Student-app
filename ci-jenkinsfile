@@ -19,7 +19,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compile Source Code'
-                mvn clean compile
+                sh "mvn clean compile"
             }
         }
         stage('Unit-Testing') {
