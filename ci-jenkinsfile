@@ -5,11 +5,21 @@ pipeline {
         label "buildserver"
     }
 
+    tools {
+        maven 'maven3.8'
+    }
+
     stages {
-        stage('Compile') {
+        stage('Clone Source Code') {
             steps {
                 echo 'Cloning Repository...'
                 git branch: 'main', credentialsId: 'gitlab', url: 'https://gitlab.com/rns-app/student-app.git'
+            }
+        }
+        stage('Compile') {
+            steps {
+                echo 'Compile Source Code'
+                mvn clean compile
             }
         }
         stage('Unit-Testing') {
