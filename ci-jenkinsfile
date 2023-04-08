@@ -57,6 +57,7 @@ pipeline {
             steps {
                 echo "Deploying Student App..."
                 sh "cp target/student*.war ansible/files/student.war"
+                ansiblePlaybook becomeUser: 'devops', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy_war_file_tomcat.yml', sudoUser: 'devops'
             }
         }
     }
