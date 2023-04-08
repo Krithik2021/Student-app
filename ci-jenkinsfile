@@ -37,12 +37,23 @@ pipeline {
         stage('Packaging') {
             steps {
                 sh "echo 1 | sudo alternatives --config java"
-                echo "Packaging version = '${version}'"
+                echo "Packaging...."
+                sh "mvn clean package -DskipTests"
+            }
+            post{
+              success {
+                archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+              }
             }
         }
         stage('Update DB Schema') {
             steps {
-                echo "Updating DB Schema..."
+                echo "Updating DB Schema and Nginx Deployment..."
+            }
+        }
+        stage('Deploy Application') {
+            steps {
+                echo "Deploying Student App..."
             }
         }
     }
