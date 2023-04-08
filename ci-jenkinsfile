@@ -7,6 +7,7 @@ pipeline {
 
     tools {
         maven 'maven3.8'
+        ansible 'ansible'
     }
 
     stages {
@@ -49,11 +50,13 @@ pipeline {
         stage('Update DB Schema') {
             steps {
                 echo "Updating DB Schema and Nginx Deployment..."
+                ansiblePlaybook becomeUser: 'devops', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/create_db_schema.yml', sudoUser: 'devops'
             }
         }
         stage('Deploy Application') {
             steps {
                 echo "Deploying Student App..."
+                sh "cp target/student*.war ansible/files/student.war"
             }
         }
     }
