@@ -22,7 +22,7 @@ public class StudentDAO {
     }*/
 	
 	public static Connection getConnection() throws Exception {
-		Connection conn=null;
+		Connection conn=null
 		Context initContext = new InitialContext();
 		Context envContext = (Context) initContext.lookup("java:comp/env");
 		DataSource ds = (DataSource) envContext.lookup("jdbc/TestDB");
