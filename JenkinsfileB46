@@ -12,5 +12,10 @@ pipeline {
                 echo 'How are you?'
             }
         }
+        stage('Welcome') {
+            steps {
+                echo 'Welcome to Pipeline Script'
+            }
+        }
     }
 }
