@@ -16,7 +16,7 @@ pipeline {
         stage('Pre-Deployment Tests') {
             steps {
                 echo 'Pre-Deployment Tests'
-                sh "su devops -c 'echo 2 | sudo alternatives --config java'"
+                sh "sudo su devops -c 'echo 2 | sudo alternatives --config java'"
                 sh 'java -version'
                 sh 'mvn clean test'
                 sh "echo 1 | sudo alternatives --config java"
