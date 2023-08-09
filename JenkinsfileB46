@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    tools {
+        maven "maven3.8"
+    }
+
     stages {
         stage('Compile The Source Code') {
             steps {
                 echo 'Clone the GitLab Repo'
                 git branch: 'main', credentialsId: 'gitlab_credentials', url: 'https://gitlab.com/rns-app/student-app.git'
+                sh 'mvn clean compile'
             }
         }
         stage('Pre-Deployment Tests') {
