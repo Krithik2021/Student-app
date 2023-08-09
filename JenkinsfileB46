@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Compile The Source Code') {
             steps {
-                echo 'Hello World'
+                echo 'Clone the GitLab Repo'
+                git branch: 'main', credentialsId: 'gitlab_credentials', url: 'https://gitlab.com/rns-app/student-app.git'
             }
         }
         stage('Pre-Deployment Tests') {
