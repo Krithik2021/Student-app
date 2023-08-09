@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Compile The Source Code') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('How are you') {
+        stage('Pre-Deployment Tests') {
             steps {
                 echo 'How are you?'
             }
         }
-        stage('Welcome') {
+        stage('Packaging') {
             steps {
                 echo 'Welcome to Pipeline Script'
             }
