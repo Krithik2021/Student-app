@@ -15,7 +15,9 @@ pipeline {
         }
         stage('Pre-Deployment Tests') {
             steps {
-                echo 'How are you?'
+                echo 'Pre-Deployment Tests'
+                java -version
+                sh 'mvn clean test'
             }
         }
         stage('Packaging') {
