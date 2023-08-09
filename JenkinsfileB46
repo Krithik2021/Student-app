@@ -30,7 +30,8 @@ pipeline {
         }
         stage('Packaging') {
             steps {
-                echo 'Welcome to Pipeline Script'
+                echo 'Packaging of the Application'
+                sh 'mvn clean package -DskipTests'
             }
         }
     }
