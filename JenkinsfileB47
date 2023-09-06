@@ -2,14 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Pull the Code') {
             steps {
-                echo 'Hello World'
+                echo 'Pulling code from Repo'
             }
         }
-        stage('Welcome') {
+        stage('Compile') {
             steps {
-                echo 'Welcome to Pipeline'
+                echo 'Compiling Code'
+            }
+        }
+        stage('Pre-Deployment') {
+            steps {
+                echo 'Pre Deployment'
             }
         }
     }
