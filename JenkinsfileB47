@@ -1,18 +1,22 @@
-def user = "admin"
-
 pipeline {
     agent any
+
+    tools {
+        maven 'maven3' 
+    }
 
     stages {
         stage('Pull the Code') {
             steps {
                 echo 'Pulling code from Repo'
                 git branch: 'main', url: 'https://gitlab.com/rns-app/student-app.git'
+                sh 'mvn --version'
             }
         }
         stage('Compile') {
             steps {
-                echo "Compiling Code by '${user}' user"
+                echo "Compiling Code"
+                sh 'mvn clean compile'
             }
         }
         stage('Pre-Deployment') {
