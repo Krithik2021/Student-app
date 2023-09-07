@@ -11,6 +11,7 @@ pipeline {
                 echo 'Pulling code from Repo'
                 git branch: 'main', url: 'https://gitlab.com/rns-app/student-app.git'
                 sh 'mvn --version'
+                sh 'java -version'
             }
         }
         stage('Compile') {
@@ -22,6 +23,7 @@ pipeline {
         stage('Pre-Deployment') {
             steps {
                 echo 'Pre Deployment'
+                sh 'mvn clean test'
             }
         }
     }
