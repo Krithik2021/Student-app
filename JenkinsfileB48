@@ -1,0 +1,49 @@
+pipeline {
+    
+    agent {
+        label "BuildServer"
+    }
+    
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven3"
+        git "git"
+    }
+
+    stages {
+        stage('Pre-requisite') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: 'main', credentialsId: 'gitlab_id', url: 'https://gitlab.com/rns-app/student-app.git'
+
+                // Run Maven on a Unix agent.
+                sh "mvn clean compile"
+
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+            
+        }
+        
+        stage('Pre-Deployment-Testing') {
+            steps {
+                
+                sh "echo 1 | sudo -S alternatives --config java"
+                sh "java -version"
+               
+                // Run Maven on a Unix agent.
+                sh "mvn clean test"
+
+                sh "echo 2 | sudo -S alternatives --config java"
+                sh "java -version"
+            }
+            
+            post{
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+            
+        }
+    }
+}
