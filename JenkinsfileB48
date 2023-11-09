@@ -45,5 +45,20 @@ pipeline {
             }
             
         }
+
+        stage('Packaging-Application') {
+            steps {                
+                
+                // Run Maven on a Unix agent.
+                sh "mvn clean package -DskipTests"
+            }
+            
+            post{
+                success {
+                    archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+                }
+            }
+            
+        }
     }
 }
