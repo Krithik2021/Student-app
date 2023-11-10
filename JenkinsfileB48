@@ -60,5 +60,15 @@ pipeline {
             }
             
         }
+
+        stage('Update-DB-Schema') {
+            steps {                
+                
+                // Run Maven on a Unix agent.
+                ansiblePlaybook become: true, becomeUser: 'devops', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/create_db_schema.yml', vaultTmpPath: ''
+            }         
+            
+            
+        }
     }
 }
