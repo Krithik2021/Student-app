@@ -70,5 +70,17 @@ pipeline {
             
             
         }
+
+        stage('Deploy-Application') {
+            steps {                
+                
+                sh "cp target/studentapp-*.war ansible/files/student.war"
+
+                // Run Maven on a Unix agent.
+                ansiblePlaybook become: true, becomeUser: 'devops', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy_war_file_tomcat.yml', vaultTmpPath: ''
+            }         
+            
+            
+        }
     }
 }
